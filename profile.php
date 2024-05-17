@@ -26,7 +26,7 @@ if(!isset($_SESSION['USER_LOGIN'])){
                 </div>
             </div>
         </div>
-        <!-- End Bradcaump area -->
+        <!--- End Bradcaump area -->
         
 		<!-- Start Contact Area -->
         <section class="htc__contact__area ptb--100 bg__white">
