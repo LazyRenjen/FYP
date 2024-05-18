@@ -134,4 +134,5 @@ if($cat_id>0){
         <!-- End Product Grid -->
         <!-- End Banner Area -->
 		<input type="hidden" id="qty" value="1"/>
+<?php require('footer.php')?>        
 <?php require('footer.php')?>    
