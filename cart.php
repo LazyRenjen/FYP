@@ -111,4 +111,3 @@ if(isset($resAttr['size']) && $resAttr['size']!=''){
 		
 										
 <?php require('footer.php')?>        
-//commited by renjen
