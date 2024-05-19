@@ -294,4 +294,8 @@ require('top.php');
         }
     </script>
     
+<<<<<<< HEAD
 <?php require('footer.php')?>        
+=======
+<?php require('footer.php')?>        
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79

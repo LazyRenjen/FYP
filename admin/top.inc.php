@@ -2,9 +2,16 @@
 require('connection.inc.php');
 require('functions.inc.php');
 if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
+<<<<<<< HEAD
 }else{
 header('location:login.php');
 die();
+=======
+
+}else{
+	header('location:login.php');
+	die();
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
 }
 ?>
 <!doctype html>
@@ -43,6 +50,7 @@ die();
 						echo '<a href="order_master.php" > Order Master</a>';
 					 }
 					 ?>
+<<<<<<< HEAD
 					 <li class="menu-item-has-children dropdown">
                      <a href="product_review.php" > Product Review</a>
                   </li>
@@ -60,6 +68,24 @@ die();
 				  <!-- <li class="menu-item-has-children dropdown">
                      <a href="banner.php" > Banner</a>
                   </li> -->
+=======
+					 
+					 
+                  </li>
+				  <?php if($_SESSION['ADMIN_ROLE']!=1){?>
+				  <li class="menu-item-has-children dropdown">
+                     <a href="product_review.php" > Product Review</a>
+                  </li>
+				  <li class="menu-item-has-children dropdown">
+                     <a href="color.php" > Color Master</a>
+                  </li>
+				  <li class="menu-item-has-children dropdown">
+                     <a href="size.php" > Size Master</a>
+                  </li>
+				  <li class="menu-item-has-children dropdown">
+                     <a href="banner.php" > Banner</a>
+                  </li>
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
 				   <li class="menu-item-has-children dropdown">
                      <a href="vendor_management.php" > Vendor Management</a>
                   </li>
@@ -73,9 +99,15 @@ die();
 				  <li class="menu-item-has-children dropdown">
                      <a href="users.php" > User Master</a>
                   </li>
+<<<<<<< HEAD
 				  <!-- <li class="menu-item-has-children dropdown">
                      <a href="coupon_master.php" > Coupon Master</a>
                   </li> -->
+=======
+				  <li class="menu-item-has-children dropdown">
+                     <a href="coupon_master.php" > Coupon Master</a>
+                  </li>
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
 				  <li class="menu-item-has-children dropdown">
                      <a href="contact_us.php" > Contact Us</a>
                   </li>

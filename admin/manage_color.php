@@ -1,6 +1,10 @@
 <?php
 require('top.inc.php');
+<<<<<<< HEAD
 
+=======
+isAdmin();
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
 $color='';
 $msg='';
 if(isset($_GET['id']) && $_GET['id']!=''){

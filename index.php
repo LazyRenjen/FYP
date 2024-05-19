@@ -180,4 +180,8 @@ $resBanner=mysqli_query($con,"select * from banner where status='1' order by ord
         </section>
         <!-- End Product Area -->
 		<input type="hidden" id="qty" value="1"/>
+<<<<<<< HEAD
 <?php require('footer.php')?>        
+=======
+<?php require('footer.php')?>        
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79

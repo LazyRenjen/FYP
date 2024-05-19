@@ -21,7 +21,11 @@
     },
 
     "require": {
+<<<<<<< HEAD
         "php": "^8.0"
+=======
+        "php": "^7.1"
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
     },
     "require-dev": {
         "doctrine/collections": "^1.0",
