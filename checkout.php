@@ -74,7 +74,6 @@ if(isset($_POST['submit'])){
 	
 	if($payment_type=='instamojo'){
 		
-<<<<<<< HEAD
 		// $userArr=mysqli_fetch_assoc(mysqli_query($con,"select * from users where id='$user_id'"));
 		
 		// $ch = curl_init();
@@ -114,57 +113,47 @@ if(isset($_POST['submit'])){
 		// }
 	}else{	
 		
-=======
 		$userArr=mysqli_fetch_assoc(mysqli_query($con,"select * from users where id='$user_id'"));
+		// $userArr=mysqli_fetch_assoc(mysqli_query($con,"select * from users where id='$user_id'"));
 		
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/');
-		curl_setopt($ch, CURLOPT_HEADER, FALSE);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-		curl_setopt($ch, CURLOPT_HTTPHEADER,
-			array("X-Api-Key:".INSTAMOJO_KEY,"X-Auth-Token:".INSTAMOJO_TOKEN)
-		);
+		// $ch = curl_init();
+		// curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/');
+		// curl_setopt($ch, CURLOPT_HEADER, FALSE);
+		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		// curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+		// curl_setopt($ch, CURLOPT_HTTPHEADER,
+		// 	array("X-Api-Key:".INSTAMOJO_KEY,"X-Auth-Token:".INSTAMOJO_TOKEN)
+		// );
 		
-		$payload = Array(
-			'purpose' => 'Buy Product',
-			'amount' => $total_price,
-			'phone' => $userArr['mobile'],
-			'buyer_name' => $userArr['name'],
-			'redirect_url' => INSTAMOJO_REDIRECT,
-			'send_email' => false,
-			'send_sms' => false,
-			'email' => $userArr['email'],
-			'allow_repeated_payments' => false
-		);
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
-		$response = curl_exec($ch);
-		curl_close($ch); 
-		$response=json_decode($response);
-		if(isset($response->payment_request->id)){
-			unset($_SESSION['cart']);
-			$_SESSION['TID']=$response->payment_request->id;
-			mysqli_query($con,"update `order` set txnid='".$response->payment_request->id."' where id='".$order_id."'");
-			?>
+		// $payload = Array(
+		// 	'purpose' => 'Buy Product',
+		// 	'amount' => $total_price,
+		// 	'phone' => $userArr['mobile'],
+		// 	'buyer_name' => $userArr['name'],
+		// 	'redirect_url' => INSTAMOJO_REDIRECT,
+		// 	'send_email' => false,
+		// 	'send_sms' => false,
+		// 	'email' => $userArr['email'],
+		// 	'allow_repeated_payments' => false
+		// );
+		// curl_setopt($ch, CURLOPT_POST, true);
+		// curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+		// $response = curl_exec($ch);
+		// curl_close($ch); 
+		// $response=json_decode($response);
+		// if(isset($response->payment_request->id)){
+		// 	unset($_SESSION['cart']);
+		// 	$_SESSION['TID']=$response->payment_request->id;
+		// 	mysqli_query($con,"update `order` set txnid='".$response->payment_request->id."' where id='".$order_id."'");
+		// 	?>
 			<script>
-			window.location.href='<?php echo $response->payment_request->longurl?>';
+				window.location.href='thank_you.php';
 			</script>
 			<?php
-		}else{
-			if(isset($response->message)){
-				$errMsg.="<div class='instamojo_error'>";
-				foreach($response->message as $key=>$val){
-					$errMsg.=strtoupper($key).' : '.$val[0].'<br/>';				
-				}
-				$errMsg.="</div>";
-			}else{
-				echo "Something went wrong";
-			}
-		}
+		// }
 	}else{	
 		sentInvoice($con,$order_id);
->>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
+		
 		?>
 		<script>
 			window.location.href='thank_you.php';
@@ -360,42 +349,34 @@ $qty=$val1['qty'];
                                     </div>
                                     <div class="single-item__content">
                                         <a href="#"><?php echo $pname?> * <?php echo $qty?></a>
-<<<<<<< HEAD
                                         <span class="price"><?php echo "Rs ". $price*$qty?></span>
-=======
                                         <span class="price"><?php echo $price*$qty?></span>
->>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
+                                        <span class="price"><?php echo "Rs ". $price*$qty?></span>
                                     </div>
                                     
                                 </div>
 								<?php } } ?>
                             </div>
-<<<<<<< HEAD
 							<!-- <div class="ordre-details__total" id="coupon_box">
-=======
 							<div class="ordre-details__total" id="coupon_box">
->>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
+							<!-- <div class="ordre-details__total" id="coupon_box">
                                 <h5>Coupon Value</h5>
                                 <span class="price" id="coupon_price"></span>
                             </div>
                             <div class="ordre-details__total">
                                 <h5>Order total</h5>
-<<<<<<< HEAD
                                 <span class="price" id="order_total_price"><?php echo "Rs ".$cart_total?></span>
-=======
                                 <span class="price" id="order_total_price"><?php echo $cart_total?></span>
->>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
+                                <span class="price" id="order_total_price"><?php echo "Rs ".$cart_total?></span>
                             </div>
 							
 							<div class="ordre-details__total bilinfo">
                                 <input type="textbox" id="coupon_str" class="coupon_style mr5"/> <input type="button" name="submit" class="fv-btn coupon_style" value="Apply Coupon" onclick="set_coupon()"/>
 								
                             </div>
-<<<<<<< HEAD
 							<div id="coupon_result"></div> -->
-=======
 							<div id="coupon_result"></div>
->>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
+							<div id="coupon_result"></div> -->
                         </div>
                     </div>
                 </div>

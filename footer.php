@@ -32,13 +32,12 @@
                                 <h2 class="title__line--2">information</h2>
                                 <div class="ft__inner">
                                     <ul class="ft__list">
-<<<<<<< HEAD
                                         <li><a href="about.php">About us</a></li>
                                         <li><a href="privacypolicy.php">Privacy & Policy</a></li>
-=======
                                         <li><a href="#">About us</a></li>
                                         <li><a href="#">Privacy & Policy</a></li>
->>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
+                                        <li><a href="about.php">About us</a></li>
+                                        <li><a href="privacypolicy.php">Privacy & Policy</a></li>
                                         <li><a href="#">Terms  & Condition</a></li>
                                     </ul>
                                 </div>
@@ -51,16 +50,16 @@
                                 <h2 class="title__line--2">my account</h2>
                                 <div class="ft__inner">
                                     <ul class="ft__list">
-<<<<<<< HEAD
                                         <li><a href="profile.php">Profile</a></li>
                                         <li><a href="cart.php">My Cart</a></li>
                                         <li><a href="wishlist.php">Wishlist</a></li>
-=======
                                         <li><a href="profile.php">My Account</a></li>
                                         <li><a href="cart.php">My Cart</a></li>
                                         <li><a href="wishlist.php">Wishlist</a></li>
                                         <li><a href="checkout.php">Checkout</a></li>
->>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
+                                        <li><a href="profile.php">Profile</a></li>
+                                        <li><a href="cart.php">My Cart</a></li>
+                                        <li><a href="wishlist.php">Wishlist</a></li>
                                     </ul>
                                 </div>
                             </div>
