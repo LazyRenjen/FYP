@@ -17,7 +17,7 @@ if(!isset($_SESSION['USER_LOGIN'])){
                                 <nav class="bradcaump-inner">
                                   <a class="breadcrumb-item" href="index.php">Home</a>
                                   <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
-                                  <span class="breadcrumb-item active">Thank You</span>
+                                  <span class="breadcrumb-item active">Orders</span>
                                 </nav>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ if(!isset($_SESSION['USER_LOGIN'])){
                                             <tr>
 												<td class="product-add-to-cart"><a href="my_order_details.php?id=<?php echo $row['id']?>"> <?php echo $row['id']?></a>
 												<br/>
-												<a href="order_pdf.php?id=<?php echo $row['id']?>"> PDF</a>
+											
 												</td>
                                                 <td class="product-name"><?php echo $row['added_on']?></td>
                                                 <td class="product-name">
