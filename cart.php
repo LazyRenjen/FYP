@@ -71,15 +71,15 @@ if(isset($resAttr['size']) && $resAttr['size']!=''){
 }
 ?>				
 					<ul  class="pro__prize">
-														<li class="old__prize"><?php echo $mrp?></li>
-														<li><?php echo $price?></li>
+														<li class="old__prize"><?php echo "Rs ".$mrp?></li>
+														<li><?php echo "Rs ".$price?></li>
 													</ul>
 												</td>
-												<td class="product-price"><span class="amount"><?php echo $price?></span></td>
+												<td class="product-price"><span class="amount"><?php echo "Rs ".$price?></span></td>
 												<td class="product-quantity"><input type="number" id="<?php echo $key?>qty" value="<?php echo $qty?>" />
 												<br/><a href="javascript:void(0)" onclick="manage_cart_update('<?php echo $key?>','update','<?php echo $resAttr['size_id']?>','<?php echo $resAttr['color_id']?>')">update</a>
 												</td>
-												<td class="product-subtotal"><?php echo $qty*$price?></td>
+												<td class="product-subtotal"><?php echo "Rs " .$qty*$price?></td>
 												<td class="product-remove"><a href="javascript:void(0)" onclick="manage_cart_update('<?php echo $key?>','remove','<?php echo $resAttr['size_id']?>','<?php echo $resAttr['color_id']?>')"><i class="icon-trash icons"></i></a></td>
 											</tr>
 										<?php } } } ?>

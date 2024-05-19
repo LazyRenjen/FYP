@@ -7,6 +7,7 @@ if(!isset($_SESSION['USER_LOGIN'])){
 	window.location.href='index.php';
 	</script>
 	<?php
+	
 }
 $name=get_safe_value($con,$_POST['name']);
 $uid=$_SESSION['USER_ID'];
