@@ -3,7 +3,7 @@ require('top.php');
 if(isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN']=='yes'){
 	?>
 	<script>
-	window.location.href='my_order.php';
+	window.location.href='index.php';
 	</script>
 	<?php
 }
@@ -68,76 +68,54 @@ if(isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN']=='yes'){
 				</div>
 				
 
-					<div class="col-md-6">
-						<div class="contact-form-wrap mt--60">
-							<div class="col-xs-12">
-								<div class="contact-title">
-									<h2 class="title__line--6">Register</h2>
-								</div>
-							</div>
-							<div class="col-xs-12">
-								<form id="register-form" method="post">
-									<div class="single-contact-form">
-										<div class="contact-box name">
-											<input type="text" name="name" id="name" placeholder="Your Name*" style="width:100%">
-										</div>
-										<span class="field_error" id="name_error"></span>
-									</div>
-									<div class="single-contact-form">
-										<div class="contact-box name">
-											<input type="text" name="email" id="email" placeholder="Your Email*" style="width:45%">
-											
-											
-											<button type="button" class="fv-btn email_sent_otp height_60px" onclick="email_sent_otp()">Send OTP</button>
-											
-											<input type="text" id="email_otp" placeholder="OTP" style="width:45%" class="email_verify_otp">
-											
-											
-											<button type="button" class="fv-btn email_verify_otp height_60px" onclick="email_verify_otp()">Verify OTP</button>
-											
-											<span id="email_otp_result"></span>
-										</div>
-										<span class="field_error" id="email_error"></span>
-									</div>
-									<div class="single-contact-form">
-										<div class="contact-box name">
-											<input type="text" name="mobile" id="mobile" placeholder="Your Mobile*" style="width:45%">
-											
-											<button type="button" class="fv-btn mobile_sent_otp height_60px" onclick="mobile_sent_otp()">Send OTP</button>
-											
-											<input type="text" id="mobile_otp" placeholder="OTP" style="width:45%" class="mobile_verify_otp">
-											
-											
-											<button type="button" class="fv-btn mobile_verify_otp height_60px" onclick="mobile_verify_otp()">Verify OTP</button>
-											
-											<span id="mobile_otp_result"></span>
-											
-											
-										</div>
-										<span class="field_error" id="mobile_error"></span>
-									</div>
-									<div class="single-contact-form">
-										<div class="contact-box name">
-											<input type="password" name="password" id="password" placeholder="Your Password*" style="width:100%">
-										</div>
-										<span class="field_error" id="password_error"></span>
-									</div>
-									
-									<div class="contact-btn">
-										<button type="button" class="fv-btn" onclick="user_register()" disabled id="btn_register">Register</button>
-									</div>
-								</form>
-								<div class="form-output register_msg">
-									<p class="form-messege field_error"></p>
-								</div>
-							</div>
-						</div> 
-                
-				</div>
-					
+				<div class="col-md-6">
+    <div class="contact-form-wrap mt--60">
+        <div class="col-xs-12">
+            <div class="contact-title">
+                <h2 class="title__line--6">Register</h2>
             </div>
+        </div>
+        <div class="col-xs-12">
+            <form id="register-form" method="post">
+                <div class="single-contact-form">
+                    <div class="contact-box name">
+                        <input type="text" name="name" id="name" placeholder="Your Name*" style="width:100%">
+                    </div>
+                    <span class="field_error" id="name_error"></span>
+                </div>
+                <div class="single-contact-form">
+                    <div class="contact-box name">
+                        <input type="text" name="email" id="email" placeholder="Your Email*" style="width:100%">
+                    </div>
+                    <span class="field_error" id="email_error"></span>
+                </div>
+                <div class="single-contact-form">
+                    <div class="contact-box name">
+                        <input type="text" name="mobile" id="mobile" placeholder="Your Mobile*" style="width:100%">
+                    </div>
+                    <span class="field_error" id="mobile_error"></span>
+                </div>
+                <div class="single-contact-form">
+                    <div class="contact-box name">
+                        <input type="password" name="password" id="password" placeholder="Your Password*" style="width:100%">
+                    </div>
+                    <span class="field_error" id="password_error"></span>
+                </div>
+                
+                <div class="contact-btn">
+                    <button type="button" class="fv-btn" onclick="user_register()">Register</button>
+                </div>
+            </form>
+            <div class="form-output register_msg">
+                <p class="form-messege field_error"></p>
+            </div>
+        </div>
+    </div> 
+</div>
+</div>
         </section>
-		<input type="hidden" id="is_email_verified"/>
+		<!--OTP-->
+		<!-- <input type="hidden" id="is_email_verified"/>
 		<input type="hidden" id="is_mobile_verified"/>
 		<script>
 		function email_sent_otp(){
@@ -254,6 +232,6 @@ if(isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN']=='yes'){
 					
 				});
 			}
-		}
+		} -->
 		</script>
 <?php require('footer.php')?>        
