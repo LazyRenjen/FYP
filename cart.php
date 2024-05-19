@@ -110,4 +110,10 @@ if(isset($resAttr['size']) && $resAttr['size']!=''){
 		<input type="hidden" id="cid">
 		
 										
+
 <?php require('footer.php')?>        
+
+<?php require('footer.php')?>        
+
+<?php require('footer.php')?>        
+

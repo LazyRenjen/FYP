@@ -295,3 +295,5 @@ require('top.php');
     </script>
     
 <?php require('footer.php')?>        
+<?php require('footer.php')?>        
+<?php require('footer.php')?>        

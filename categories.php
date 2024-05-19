@@ -78,6 +78,8 @@ if($cat_id>0){
                         <div class="htc__product__rightidebar">
                             <div class="htc__grid__top">
                                 <!-- <div class="htc__select__option">
+                                <div class="htc__select__option">
+                                <!-- <div class="htc__select__option">
                                     <select class="ht__select" onchange="sort_product_drop('<?php echo $cat_id?>','<?php echo SITE_PATH?>')" id="sort_product_id">
                                         <option value="">Default softing</option>
                                         <option value="price_low" <?php echo $price_low_selected?>>Sort by price low to high</option>
@@ -85,6 +87,12 @@ if($cat_id>0){
                                         <option value="new" <?php echo $new_selected?>>Sort by new first</option>
 										<option value="old" <?php echo $old_selected?>>Sort by old first</option>
                                     </select>
+                                </div> -->
+                               
+                            </div> 	
+                                </div>
+                               
+                            </div>
                                 </div> -->
                                
                             </div> 	
@@ -114,6 +122,10 @@ if($cat_id>0){
 													<ul class="fr__pro__prize">
 														<li class="old__prize"><?php echo "Rs ".$list['mrp']?></li>
 														<li><?php echo "Rs ".$list['price']?></li>
+														<li class="old__prize"><?php echo $list['mrp']?></li>
+														<li><?php echo $list['price']?></li>
+														<li class="old__prize"><?php echo "Rs ".$list['mrp']?></li>
+														<li><?php echo "Rs ".$list['price']?></li>
 													</ul>
 												</div>
 											</div>
@@ -134,4 +146,7 @@ if($cat_id>0){
         <!-- End Product Grid -->
         <!-- End Banner Area -->
 		<input type="hidden" id="qty" value="1"/>
+<?php require('footer.php')?>        
+<?php require('footer.php')?>        
+<?php require('footer.php')?>    
 <?php require('footer.php')?>        

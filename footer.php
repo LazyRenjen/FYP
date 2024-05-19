@@ -34,6 +34,10 @@
                                     <ul class="ft__list">
                                         <li><a href="about.php">About us</a></li>
                                         <li><a href="privacypolicy.php">Privacy & Policy</a></li>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Privacy & Policy</a></li>
+                                        <li><a href="about.php">About us</a></li>
+                                        <li><a href="privacypolicy.php">Privacy & Policy</a></li>
                                         <li><a href="#">Terms  & Condition</a></li>
                                     </ul>
                                 </div>
@@ -46,6 +50,13 @@
                                 <h2 class="title__line--2">my account</h2>
                                 <div class="ft__inner">
                                     <ul class="ft__list">
+                                        <li><a href="profile.php">Profile</a></li>
+                                        <li><a href="cart.php">My Cart</a></li>
+                                        <li><a href="wishlist.php">Wishlist</a></li>
+                                        <li><a href="profile.php">My Account</a></li>
+                                        <li><a href="cart.php">My Cart</a></li>
+                                        <li><a href="wishlist.php">Wishlist</a></li>
+                                        <li><a href="checkout.php">Checkout</a></li>
                                         <li><a href="profile.php">Profile</a></li>
                                         <li><a href="cart.php">My Cart</a></li>
                                         <li><a href="wishlist.php">Wishlist</a></li>

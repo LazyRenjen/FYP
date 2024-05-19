@@ -121,6 +121,9 @@ $product_review_res=mysqli_query($con,"select users.name,product_review.id,produ
                             <div class="ht__product__dtl">
                                 <h2><?php echo $get_product['0']['name']?></h2>
                                 <ul  class="pro__prize">
+                                    <li class="new__price"><?php echo "Rs ".$get_product['0']['price']?></li>
+                                    <li class="old__prize"><?php echo $get_product['0']['mrp']?></li>
+                                    <li class="new__price"><?php echo $get_product['0']['price']?></li>
                                     <li class="old__prize"><?php echo "Rs ".$get_product['0']['mrp']?></li>
                                     <li class="new__price"><?php echo "Rs ".$get_product['0']['price']?></li>
                                 </ul>
@@ -384,7 +387,9 @@ echo date('d M Y',$added_on);
 												</div>
 												<div class="fr__product__inner">
 													<h4><a href="product.php?id=<?php echo $list['id']?>"><?php echo $list['name']?></a></h4>
-													
+														<li class="old__prize"><?php echo $list['mrp']?></li>
+														<li class="new__price"><?php echo $list['price']?></li>
+													</ul>
 												</div>
 											</div>
 										

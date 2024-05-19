@@ -73,7 +73,11 @@ $res=mysqli_query($con,"select product.name,product.image,product_attributes.pri
                                             <a href="<?php echo SITE_PATH?>">Continue Shopping</a>
                                         </div>
                                         <div class="buttons-cart checkout--btn">
+<<<<<<< HEAD
+                                            <a href="cart.php">Go to Cart</a>
+=======
                                             <a href="<?php echo SITE_PATH?>checkout.php">checkout</a>
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
                                         </div>
                                     </div>
                                 </div>

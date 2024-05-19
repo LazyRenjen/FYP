@@ -1710,6 +1710,12 @@ class PHPMailer
                             $this->Realm,
                             $this->Workstation
                         )
+<<<<<<< HEAD
+                        ) 
+                    
+                    return true;
+                } 
+=======
                         ) {
                             throw new phpmailerException($this->lang('authenticate'));
                         }
@@ -1721,6 +1727,7 @@ class PHPMailer
                     // We must have connected, but then failed TLS or Auth, so close connection nicely
                     $this->smtp->quit();
                 }
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
             }
         }
         // If we get here, all connection attempts have failed, so close connection hard
@@ -1736,7 +1743,11 @@ class PHPMailer
      * Close the active SMTP session if one exists.
      * @return void
      */
+<<<<<<< HEAD
+    function smtpClose()
+=======
     public function smtpClose()
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
     {
         if (is_a($this->smtp, 'SMTP')) {
             if ($this->smtp->connected()) {
@@ -1755,7 +1766,11 @@ class PHPMailer
      * @return boolean
      * @access public
      */
+<<<<<<< HEAD
+    function setLanguage($langcode = 'en', $lang_path = '')
+=======
     public function setLanguage($langcode = 'en', $lang_path = '')
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
     {
         // Backwards compatibility for renamed language codes
         $renamed_langcodes = array(
@@ -1822,7 +1837,11 @@ class PHPMailer
      * Get the array of strings for the current language.
      * @return array
      */
+<<<<<<< HEAD
+    function getTranslations()
+=======
     public function getTranslations()
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
     {
         return $this->language;
     }
@@ -1837,7 +1856,11 @@ class PHPMailer
      * array(array('joe@example.com', 'Joe User'), array('zoe@example.com', 'Zoe User'))
      * @return string
      */
+<<<<<<< HEAD
+    function addrAppend($type, $addr)
+=======
     public function addrAppend($type, $addr)
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
     {
         $addresses = array();
         foreach ($addr as $address) {

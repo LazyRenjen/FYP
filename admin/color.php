@@ -1,6 +1,10 @@
 <?php
 require('top.inc.php');
+<<<<<<< HEAD
+
+=======
 isAdmin();
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
 if(isset($_GET['type']) && $_GET['type']!=''){
 	$type=get_safe_value($con,$_GET['type']);
 	if($type=='status'){

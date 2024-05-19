@@ -31,7 +31,11 @@ isAdmin();
 								?>
 								<tr>
 									<td class="product-add-to-cart"><a href="order_master_detail.php?id=<?php echo $row['id']?>"> <?php echo $row['id']?></a><br/>
+<<<<<<< HEAD
+									
+=======
 									<a href="../order_pdf.php?id=<?php echo $row['id']?>">PDF</a></td>
+>>>>>>> 4a63c2cbe3baa8eae0eb5773e49fc1b4eb462b79
 									<td class="product-name"><?php echo $row['added_on']?></td>
 									<td class="product-name">
 									<?php echo $row['address']?><br/>
