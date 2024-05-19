@@ -35,7 +35,7 @@ require('top.php');
                                 <i class="icon-location-pin icons"></i>
                             </div>
                             <div class="address__details">
-                                <h2 class="ct__title">our address</h2>
+                                <h2 class="ct__title">our office headquaters</h2>
                                 <p>Naxal, Kathmandu, Nepal </p>
                             </div>
                         </div>
@@ -45,7 +45,7 @@ require('top.php');
                             </div>
                             <div class="address__details">
                                 <h2 class="ct__title">opening hour</h2>
-                                <p>Naxal, Kathmandu, Nepal </p>
+                                <p>12AM- 12PM. Yup, we are open 24/7. </p>
                             </div>
                         </div>
 
@@ -61,10 +61,14 @@ require('top.php');
                     </div>      
                 </div>
                 <div class="row">
-                    <div class="contact-form-wrap mt--60">
+                    <div class="contact-form-wrap mt--60" id="send-mail-section">
                         <div class="col-xs-12">
                             <div class="contact-title">
                                 <h2 class="title__line--6">SEND A MAIL</h2>
+                                <p style="padding-bottom:20px">Contact us through the form below!</p>
+                                <p style="padding-bottom:20px; color:black; font-size:13px">Note: If you are here to join us as a seller, please enter
+                            your desired account details and mention why you would like to become a seller. Also do introduce us to your collections. We will 
+                        get back to you soon! </p>
                             </div>
                         </div>
                         <div class="col-xs-12">
@@ -103,7 +107,6 @@ require('top.php');
         google.maps.event.addDomListener(window, 'load', init);
         function init() {
             var mapOptions = {
-                // How zoomed in you want the map to start at (always required)
                 zoom: 12,
                 scrollwheel: false,
                 center: new google.maps.LatLng(27.71234095279832, 85.33059443823916), 
@@ -290,4 +293,5 @@ require('top.php');
             });
         }
     </script>
+    
 <?php require('footer.php')?>        
