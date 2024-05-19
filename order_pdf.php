@@ -1,0 +1,82 @@
+<?php
+require 'vendor\autoload.php'; 
+require 'connection.inc.php';
+require 'functions.inc.php';
+
+$order_id = get_safe_value($con, $_GET['id']);
+
+// Fetch coupon details
+$coupon_details = mysqli_fetch_assoc(mysqli_query($con, "SELECT coupon_value FROM `order` WHERE id='$order_id'"));
+$coupon_value = isset($coupon_details['coupon_value']) ? (int)$coupon_details['coupon_value'] : 0;
+
+// Load CSS
+$css = file_get_contents('css/bootstrap.min.css');
+$css .= file_get_contents('style.css');
+
+// Generate HTML for the PDF
+$html = '<div class="wishlist-table table-responsive">
+   <table>
+      <thead>
+         <tr>
+            <th class="product-thumbnail">Product Name</th>
+            <th class="product-thumbnail">Product Image</th>
+            <th class="product-name">Qty</th>
+            <th class="product-price">Price</th>
+            <th class="product-price">Total Price</th>
+         </tr>
+      </thead>
+      <tbody>';
+
+$query = isset($_SESSION['ADMIN_LOGIN']) 
+    ? "SELECT DISTINCT(order_detail.id), order_detail.*, product.name, product.image FROM order_detail JOIN product ON order_detail.product_id = product.id WHERE order_detail.order_id='$order_id'"
+    : "SELECT DISTINCT(order_detail.id), order_detail.*, product.name, product.image FROM order_detail JOIN product ON order_detail.product_id = product.id JOIN `order` ON order_detail.order_id = `order`.id WHERE order_detail.order_id='$order_id' AND `order`.user_id='{$_SESSION['USER_ID']}'";
+
+$res = mysqli_query($con, $query);
+
+if (mysqli_num_rows($res) == 0) {
+    die("No order details found.");
+}
+
+$total_price = 0;
+while ($row = mysqli_fetch_assoc($res)) {
+    $pp = $row['qty'] * $row['price'];
+    $total_price += $pp;
+    $html .= '<tr>
+        <td class="product-name">' . $row['name'] . '</td>
+        <td class="product-name"><img src="' . PRODUCT_IMAGE_SITE_PATH . $row['image'] . '"></td>
+        <td class="product-name">' . $row['qty'] . '</td>
+        <td class="product-name">' . $row['price'] . '</td>
+        <td class="product-name">' . $pp . '</td>
+    </tr>';
+}
+
+if ($coupon_value > 0) {
+    $html .= '<tr>
+        <td colspan="3"></td>
+        <td class="product-name">Coupon Value</td>
+        <td class="product-name">-' . $coupon_value . '</td>
+    </tr>';
+    $total_price -= $coupon_value;
+}
+
+$html .= '<tr>
+    <td colspan="3"></td>
+    <td class="product-name">Total Price</td>
+    <td class="product-name">' . $total_price . '</td>
+</tr>';
+
+$html .= '</tbody>
+   </table>
+</div>';
+
+// Create PDF
+try {
+    $mpdf = new \Mpdf\Mpdf();
+    $mpdf->WriteHTML($css, 1);
+    $mpdf->WriteHTML($html, 2);
+    $file = time() . '.pdf';
+    $mpdf->Output($file, 'D');
+} catch (\Mpdf\MpdfException $e) {
+    echo 'PDF generation error: ' . $e->getMessage();
+}
+?>
